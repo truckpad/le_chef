@@ -60,12 +60,12 @@ file 'remove_dont_run_file' do
   action :nothing
 end
 
-package %w(logentries) do
+package 'logentries' do
   action :install
   notifies :delete, 'file[remove_dont_run_file]', :delayed
 end
 
-package %w(logentries-daemon) do
+package 'logentries-daemon' do
   action :install
   notifies :delete, 'file[remove_dont_run_file]', :delayed
 end
